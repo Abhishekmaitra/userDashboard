@@ -32,8 +32,33 @@ const uiSlice = createSlice({
       state.isModalOpen = false;
       state.modalType = null;
     },
+    setName: (state, action: PayloadAction<string>) => {
+      state.form.name = action.payload;
+    },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.form.email = action.payload;
+      state.form.error = undefined;
+    },
+    setPassword: (state, action: PayloadAction<string>) => {
+      state.form.password = action.payload;
+      state.form.error = undefined;
+    },
+    setLoading: (state, action: PayloadAction<boolean>) => {
+      state.form.isLoading = action.payload;
+    },
+    setError: (state, action: PayloadAction<string>) => {
+      state.form.error = action.payload;
+    },
   },
 });
 
-export const { openModal, closeModal } = uiSlice.actions;
+export const {
+  openModal,
+  closeModal,
+  setName,
+  setEmail,
+  setPassword,
+  setLoading,
+  setError,
+} = uiSlice.actions;
 export default uiSlice.reducer;

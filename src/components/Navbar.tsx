@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../redux/uiSlice";
 import { RootState } from "../redux/store";
 import SignIn from "../containers/SignIn";
+import Register from "../containers/Register";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { isModalOpen, modalType } = useSelector(
@@ -34,7 +35,12 @@ const Navbar = () => {
                   >
                     <div>Sign In</div>
                   </div>
-                  <div className="cursor-pointer">
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => {
+                      dispatch(openModal("register"));
+                    }}
+                  >
                     <div>Register</div>
                   </div>
                 </div>
@@ -44,6 +50,7 @@ const Navbar = () => {
         </div>
       </nav>
       {isModalOpen && modalType === "login" && <SignIn />}
+      {isModalOpen && modalType === "register" && <Register />}
     </>
   );
 };

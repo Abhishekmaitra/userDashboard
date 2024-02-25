@@ -2,6 +2,7 @@ import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import NotAllowed from "../pages/NotAllowed";
 import NotFound from "../pages/NotFound";
+import ProtectedRoute from "./ProtectedRoute";
 
 interface Navigation {
   name: string;
@@ -29,6 +30,10 @@ export const navigations: Navigation[] = [
   {
     name: "Dashboard",
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
   },
 ];
