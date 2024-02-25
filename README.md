@@ -16,6 +16,12 @@
         `https://tailwindcss.com/docs/guides/create-react-app`
     - Setup React Router
         `npm i react-router-dom`
+    - Setup redux toolkit for react
+        `https://redux-toolkit.js.org/introduction/getting-started`
+
+### Install Types
+
+    > npm i -D @types/react-router-dom
 
 ## Scripts
 
