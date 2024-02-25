@@ -1,12 +1,14 @@
 // import React from "react";
 import Modal from "../components/Modal";
 import Input from "../components/Input";
-
+import { useDispatch } from "react-redux";
+import { closeModal } from "../redux/uiSlice";
 const SignIn = () => {
+  const dispatch = useDispatch();
   return (
     <Modal
       onClose={() => {
-        // dispatch(closeModal());
+        dispatch(closeModal());
       }}
       className="sign-in"
     >

@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import uiSliceReducer from "./uiSlice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    ui: uiSliceReducer,
+  },
   middleware: (getDefaultMiddlerware) => getDefaultMiddlerware(),
 });
 
